@@ -1,0 +1,81 @@
+---
+title: "Week 1 Econ2900"
+author: "Xavier + Johann"
+date: "2022-08-01"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Week 1 
+Key scripts to start R with:
+
+* library(logr)
+* library(janitor)
+* library(here)
+* library(skimr)
+* library(knitr)
+* library(foreign)
+* library(haven)
+* library(cli)
+* library(stargazer)
+* library(base64enc)
+* library(mime)
+* library(ggplot2)
+* library(dplyr)
+* library(knitr)
+* library(tibble)
+* library(tidyr)
+* library(tidyverse)
+* library(plm)
+* library(haven)
+* library(tibble)
+
+## Important Functions (using for example hh_98):
+
+<br> 
+  
+<table>
+<caption><span id="tab:table">Table: </span> Table.</caption>
+Function       Purpose
+------------------------------------------------------------------------------------------        ------------------------------------------
+View(hh_98)                                                                                       Data easier to interpret 
+dim(hh_98)                                                                                        ? 
+str(hh_98)                                                                                        ? 
+glimpse(hh_98)                                                                                    Data more readable in the console
+head(hh_98)                                                                                       Information regarding  data of first few people
+tail(hh_98)                                                                                       Opposite as above 
+summary(hh_98)                                                                                    Information on age, sex, min, medium and max
+skim(hh_98)                                                                                       Similar to summary
+summarise(hh_98, mean(famsize), mean(educhead))                                                   great to get information on more than one subject
+summarise(hh_98, mean(famsize), sd(famsize), min(famsize),mean(educhead), sd(educhead), n())      Same as above
+arrange(hh_98, agehead)                                                                           Perhaps arranging in  value of age
+sum(hh_98$agehead > 50)                                                                           Value of those over the age of 50
+young_head <- filter(hh_98, agehead < 80)                                                         No Idea
+fam_size <- filter(hh_98, famsize < 7)                                                            Filter families size less than 7
+hh_98 %>% group_by(dfmfd) %>% summarise(famsize_mean = mean(famsize, na.rm = TRUE),                                                                         famsize_sd = sd(famsize, na.rm = TRUE), rice_pricem = mean(rice, na.rm = TRUE),                                                                                 rice_pricesd = sd(rice, na.rm = TRUE), wheat_pricem = mean(wheat, na.rm = TRUE), wheat_pricesd = sd(wheat, na.rm = TRUE))
+hh_98 %>% group_by(dfmfd) %>% summarise(educhead_mean = mean(educhead, na.rm = TRUE),                                                                           educhead_sd = sd(educhead, na.rm = TRUE))
+
+
+</table>
+## Tutorial Questions
+Question 1:
+What is the average family size?
+
+=> The average family size is *five*
+
+Qustion 2:
+What is the average educational achievement?
+
+=>For those with a HH with a microcredit participant who is female the answer is *1.75*. If NO, then *2.95*. 
+
+Question 3:
+Using the summarise command and the help function what other statistics can you calculate for these two variables. What do you learn about them?
+
+Question 4:
+Discuss the results of the second last bullet point.
+
+Question 5:
+Discuss the results of the last bullet point.
+
+
